@@ -30,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-aubay!');
+    expect(compiled.querySelector('h1').textContent).toContain('Bienvenidos al curso de Angular Aubay!');
   });
 });
