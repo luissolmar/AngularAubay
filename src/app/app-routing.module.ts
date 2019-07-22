@@ -6,9 +6,22 @@ import {UsuariosComponent} from './usuarios/usuarios.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'tareas', component: TareasComponent },
-  { path: 'usuarios', component: UsuariosComponent },
+  //{ path: 'home', component: HomeComponent },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'tareas', 
+    loadChildren: () => import('./tareas/tareas.module').then(m => m.TareasModule)
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)
+  },
+  //{ path: 'tareas', component: TareasComponent },
+  // { path: 'tareas', loadChildren: './tareas/tareas.module#TareasModule' },
+  // { path: 'usuarios', component: UsuariosComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home'},
 ];
