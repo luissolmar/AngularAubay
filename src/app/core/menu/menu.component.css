@@ -1,8 +1,12 @@
+:host {
+    padding:1rem;
+    padding-bottom:1rem;
+}
 a {
     color: inherit ;
     text-decoration: none;
 }
 .nav-link.active{
-    color: brown;
-    background-color: bisque
+    color: blue;
+    background-color: white
 }
