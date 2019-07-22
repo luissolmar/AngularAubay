@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FooterComponent } from './core/footer/footer.component';
 
 @Component({
   selector: 'aby-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Bienvenidos al curso de Angular Aubay';
-  logo  = '../assets/Logo.svg';
+  constructor(){
+  //new FooterComponent()
+  }
 }
