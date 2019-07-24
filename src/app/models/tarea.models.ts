@@ -1,12 +1,12 @@
 export interface ITarea
 {
-    nombre: string, responsable: string, isCompleted: boolean
+    nombre: string, responsable: string, isSeleccionado: boolean
 }
 export class TareaModel implements ITarea{
     
     //nombre: string;
     constructor
-    (public nombre: string = '', public responsable: string = '', public isCompleted: boolean= false)
+    (public nombre: string = '', public responsable: string = '', public isSeleccionado: boolean= false)
     {
         //this.nombre = nombre
     }

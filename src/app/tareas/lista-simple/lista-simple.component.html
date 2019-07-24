@@ -19,14 +19,51 @@
     <button type="button" class="btn btn-primary" (click) = "deleteAllTarea()">
         Borrar todas
     </button>
-<div>
-    <h4>Tareas almacenadas</h4>
+
+<!-- Forma original Angular 2 
+    <div class="mt-4" *ngIf="aTareas.length > 0">
+ -->
+ <!-- Forma Angular 4
+    ng-container...
+-->
+
+ <!-- Forma Angular 5
+<div class='mt-4' *ngIf="aTareas.length;then TemplateSi; else TemplateNo"></div>
+<ng-template #TemplateSi>
+    <div class='mt-4'>
+        <h4>Tareas almacenadas</h4>
         <ul>
-            <li  *ngFor="let tarea of aTareas; let i=index;">
-                <input type="checkbox" name="isC" id="isC" [(ngModel)] = "tarea.isCompleted"
+            <li *ngFor="let tarea of aTareas; let i=index;">
+                <input type="checkbox" name="isC" id="isC" [(ngModel)] = "tarea.isSeleccionado"
                  (change)="saveTarea()"> 
                 {{tarea.nombre}} - {{tarea.responsable}}
                 <span class="pointer" (click)="deleteTarea(i)">🗑️</span>
             </li>
         </ul>
-</div>
+    </div>
+</ng-template>
+<ng-template #TemplateNo>
+    <div class='mt-4'>
+            <p>Anímate a añadir alguna tarea </p>
+    </div>
+</ng-template>
+</div> -->
+<div class='mt-4' *ngIf="aTareas.length;then TemplateSi; else TemplateNo"></div>
+<ng-template #TemplateSi>
+    <div class='mt-4'>
+        <h4>Tareas almacenadas</h4>
+        <ul>
+            <li *ngFor="let tarea of aTareas; let i=index;" [ngClass]="{seleccionado: tarea.isSeleccionado}">
+                <input type="checkbox" name="isC" id="isC" [(ngModel)] = "tarea.isSeleccionado"
+                 (change)="saveTarea()"> 
+                {{tarea.nombre}} - {{tarea.responsable}}
+                <span class="pointer" (click)="deleteTarea(i)">🗑️</span>
+            </li>
+        </ul>
+    </div>
+</ng-template>
+<ng-template #TemplateNo>
+    <div class='mt-4'>
+            <p>Anímate a añadir alguna tarea </p>
+    </div>
+</ng-template>

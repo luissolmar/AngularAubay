@@ -6,3 +6,9 @@ ul
 {
     cursor:pointer;
 }
+
+.seleccionado {
+    text-decoration: line-through;
+    color: gray;
+    font-style: italic;
+}
