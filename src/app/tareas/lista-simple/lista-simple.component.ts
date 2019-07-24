@@ -10,6 +10,7 @@ export class ListaSimpleComponent implements OnInit {
   
   aTareas: Array<TareaModel>
   newTarea: TareaModel
+  isEditable: boolean
 
   constructor() { }
 
@@ -44,7 +45,8 @@ export class ListaSimpleComponent implements OnInit {
   }
   saveTarea() {
     console.log(this.aTareas)
-    localStorage.setItem('tareas',JSON.stringify(this.aTareas))
-    
+    localStorage.setItem('tareas',JSON.stringify(this.aTareas))   
   }
+  
+  
 }

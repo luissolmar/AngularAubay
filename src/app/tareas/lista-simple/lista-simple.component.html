@@ -53,10 +53,12 @@
     <div class='mt-4'>
         <h4>Tareas almacenadas</h4>
         <ul>
-            <li *ngFor="let tarea of aTareas; let i=index;" [ngClass]="{seleccionado: tarea.isSeleccionado}">
+            <li *ngFor="let tarea of aTareas; let i=index;" [ngClass]="{seleccionado: tarea.isSeleccionado}"
+            [contentEditable]="isEditable">
                 <input type="checkbox" name="isC" id="isC" [(ngModel)] = "tarea.isSeleccionado"
                  (change)="saveTarea()"> 
                 {{tarea.nombre}} - {{tarea.responsable}}
+                <span class="pointer" (click)="isEditable=true">✍️</span>
                 <span class="pointer" (click)="deleteTarea(i)">🗑️</span>
             </li>
         </ul>
