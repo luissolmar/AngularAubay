@@ -4,8 +4,9 @@ import { TareasComponent } from './tareas.component';
 
 
 const routes: Routes = [
-  {path: '', component: TareasComponent},
+  { path: '', component: TareasComponent },
 ];
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

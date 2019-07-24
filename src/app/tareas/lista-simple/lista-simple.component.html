@@ -1,71 +1,61 @@
 <h3>Lista simple</h3>
 <div class="form-group">
   <label for="in-nombre">Nombre</label>
-  <input type="text" class="form-control"
-  [(ngModel)] = "newTarea.nombre"
-  name="in-nombre" id="in-nombre" placeholder="">
+  <input type="text" name="in-nombre" id="in-nombre" class="form-control" 
+  [(ngModel)]="newTarea.nombre" placeholder="">
 </div>
 <div class="form-group">
-    <label for="in-resp">Responsable</label>
-    <input type="text" class="form-control"
-    [(ngModel)] = "newTarea.responsable"
-    name="in-resp" id="in-resp" placeholder="">
+    <label for="in-responsable">Responsable</label>
+    <input type="text" name="in-responsable" id="in-responsable" class="form-control" 
+    [(ngModel)]="newTarea.responsable" placeholder="">
 </div>
-<span class="pl-5"></span>
-    <button type="button" class="btn btn-primary" (click) = "addTarea()">
-        Guardar
-    </button>
-<span class="pl-5"></span>
-    <button type="button" class="btn btn-primary" (click) = "deleteAllTarea()">
-        Borrar todas
-    </button>
+<div>
+    <button type="button" class="btn btn-primary" (click)="addTarea()">Guardar</button>
+    <span class="pl-2"></span>
+    <button type="button" class="btn btn-primary" (click)="deleteAllTareas()">Borrar Todas</button>
+</div>
+<!-- Forma original AngularJS-->
+<!-- <div class='mt-4' *ngIf="aTareas.length > 0"> -->
 
-<!-- Forma original Angular 2 
-    <div class="mt-4" *ngIf="aTareas.length > 0">
- -->
- <!-- Forma Angular 4
-    ng-container...
--->
-
- <!-- Forma Angular 5
-<div class='mt-4' *ngIf="aTareas.length;then TemplateSi; else TemplateNo"></div>
-<ng-template #TemplateSi>
+<!-- Segunda forma Angular4-->
+<!-- <ng-container *ngIf="aTareas.length > 0; then siTemplate; else noTemplate"></ng-container> -->
+<!-- nunca pinta el div con el class -->
+<!-- <ng-template #siTemplate>
     <div class='mt-4'>
-        <h4>Tareas almacenadas</h4>
+        <h4>Tareas</h4>
         <ul>
-            <li *ngFor="let tarea of aTareas; let i=index;">
-                <input type="checkbox" name="isC" id="isC" [(ngModel)] = "tarea.isSeleccionado"
-                 (change)="saveTarea()"> 
-                {{tarea.nombre}} - {{tarea.responsable}}
-                <span class="pointer" (click)="deleteTarea(i)">🗑️</span>
+            <li *ngFor="let tarea of aTareas; let i = index" >
+                <input type="checkbox" name="isC" id="isC" [(ngModel)]= "tarea.isCompleted" (change)='saveTareas()' >
+                {{ tarea.nombre }} - {{ tarea.responsable }}
+                <span class="pointer" (click)="deleteTarea(i)"> 🗑️ </span>
             </li>
         </ul>
     </div>
 </ng-template>
-<ng-template #TemplateNo>
+<ng-template #noTemplate>
     <div class='mt-4'>
-            <p>Anímate a añadir alguna tarea </p>
+        <p>Anímate a añadir alguna tarea</p>
     </div>
-</ng-template>
-</div> -->
-<div class='mt-4' *ngIf="aTareas.length;then TemplateSi; else TemplateNo"></div>
-<ng-template #TemplateSi>
+</ng-template> -->
+
+<!-- Tercera forma Angular5-->
+<ng-container *ngIf="aTareas.length > 0; else elseTemplate">    
     <div class='mt-4'>
-        <h4>Tareas almacenadas</h4>
+        <h4>Tareas</h4>
         <ul>
-            <li *ngFor="let tarea of aTareas; let i=index;" [ngClass]="{seleccionado: tarea.isSeleccionado}"
-            [contentEditable]="isEditable">
-                <input type="checkbox" name="isC" id="isC" [(ngModel)] = "tarea.isSeleccionado"
-                 (change)="saveTarea()"> 
-                {{tarea.nombre}} - {{tarea.responsable}}
-                <span class="pointer" (click)="isEditable=true">✍️</span>
-                <span class="pointer" (click)="deleteTarea(i)">🗑️</span>
+            <li *ngFor="let tarea of aTareas; let i = index"    
+                [contentEditable]="isEditable"
+                [ngClass]="{ completado: tarea.isCompleted, nocompletado: !tarea.isCompleted }">
+                <input type="checkbox" name="isC" id="isC" [(ngModel)]= "tarea.isCompleted" (change)='saveTareas()'>
+                {{ tarea.nombre }} - {{ tarea.responsable }}
+                <span class="pointer" (click)="isEditable=true">🖊️</span>
+                <span class="pointer" (click)="deleteTarea(i)"> 🗑️ </span>
             </li>
         </ul>
     </div>
-</ng-template>
-<ng-template #TemplateNo>
+</ng-container>
+<ng-template #elseTemplate>    
     <div class='mt-4'>
-            <p>Anímate a añadir alguna tarea </p>
+        <p>Anímate a añadir alguna tarea</p>
     </div>
 </ng-template>

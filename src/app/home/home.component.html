@@ -1,44 +1,52 @@
 <div class="container">
-  <div class="row">
-        <aby-saludo class="col-6"></aby-saludo>
-        <aby-saludo-local class="col-6"></aby-saludo-local>
-      </div>
-      <div class="col-12">
-        <ngb-carousel *ngIf="images">
-              <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                  <img [src]="images[0]" alt="Random first slide">
-                </div>
-                <div class="carousel-caption">
-                  <h3>Curso de Angular 8</h3>
-                  <p>Uso de componentes de Ngbootstrap.</p>
-                </div>
-              </ng-template>
-              <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                  <img [src]="images[1]" alt="Random second slide">
-                </div>
-                <div class="carousel-caption">
-                      <h3>Curso de Angular 8</h3>
-                      <p>Ejemplo del uso de un carusel de imágenes</p>
-                </div>
-              </ng-template>
-              <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                  <img [src]="images[2]" alt="Random third slide">
-                </div>
-                <div class="carousel-caption">
-                      <h3>Curso de Angular 8</h3>
-                      <p>Ejemplo también del uso de un carusel de imágenes</p>
-                </div>
-              </ng-template>
+    <div class="row">
+        <div class="col-6">
+            <aby-saludo></aby-saludo>            
+        </div>
+        <div class="col-6">
+            <aby-saludo-local></aby-saludo-local>            
+        </div>
+        <div class="col-12">
+            <ngb-carousel *ngIf="images">
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                    <img class="img-fluid" [src]="images[0]" alt="Random first slide">
+                    </div>
+                    <div class="carousel-caption">
+                    <h3>Curso de Angular 8</h3>
+                    <p>Uso de componentes de NgBootstrap.</p>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                    <img class="img-fluid" [src]="images[1]" alt="Random second slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Curso de Angular 8</h3>
+                        <p>Ejemplo del uso de un carrusel de imágenes.</p>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                    <img class="img-fluid" [src]="images[2]" alt="Random third slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Curso de Angular 8</h3>
+                        <p>Ejemplo del uso de ng-templates</p>
+                    </div>
+                </ng-template>
             </ngb-carousel>
-      </div>
+        </div>        
+    </div>
 </div>
+
+
 <dialog>
     <h3>Modal</h3>
-    <p>Modal</p>p>
+    <p>Modal</p>
 </dialog>
-<html>
 
-</html>
+<template>
+    <h3>Template</h3>
+    <p>blablablalbla</p>
+</template>

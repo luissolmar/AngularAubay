@@ -1,14 +1,17 @@
-ul
-{
+ul {
     list-style-type: none;
 }
-.pointer
-{
-    cursor:pointer;
+
+.pointer {
+    cursor: pointer;
 }
 
-.seleccionado {
+.completado {
     text-decoration: line-through;
-    color: gray;
-    font-style: italic;
+    color: grey;
+    font-style: italic
+}
+.nocompletado {
+    color: blue;
+    font-style: bold
 }

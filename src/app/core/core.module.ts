@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 
-
-
-
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FooterComponent,
+    HeaderComponent, 
+    FooterComponent, 
     MenuComponent],
   imports: [
     CommonModule,
     AppRoutingModule
   ],
-  exports: [HeaderComponent, FooterComponent, MenuComponent]
+  exports: [HeaderComponent, FooterComponent]
 })
 export class CoreModule { }

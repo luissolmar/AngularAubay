@@ -9,8 +9,8 @@ describe('SaludoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SaludoComponent],
-      imports: [FormsModule]
+      imports:[FormsModule],
+      declarations: [ SaludoComponent ]
     })
     .compileComponents();
   }));

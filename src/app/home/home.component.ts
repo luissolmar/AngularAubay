@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-images: Array<any>;
+
+  images: Array<any>;
+
   constructor() { }
 
   ngOnInit() {
-    this.images = [1, 2, 3].
-    map(() => `https://picsum.photos/1100/500?random&t=${Math.random()}`);
-    
+    this.images = [1, 2, 3].map(() => `https://picsum.photos/1200/500?random&t=${Math.random()}`);
   }
 
 }

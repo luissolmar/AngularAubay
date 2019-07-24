@@ -1,8 +1,7 @@
 :host {
-    display:block;
-    background-color: blue;
-    color:   white;
-    padding:1rem;
-    padding-bottom:1rem;
-    /*text-align: center;*/
+    display: block;
+    background-color: brown;
+    color: bisque;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }

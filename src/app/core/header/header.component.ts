@@ -6,16 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title : string;
-  logo:  string;
-//title = 'Bienvenidos al curso de Angular Aubay';
-//logo  = '../assets/Logo.svg';
-//logo  = '../../assets/Logo.svg';
+  title: string;
+  logo: string;
+
   constructor() { }
 
   ngOnInit() {
-    this.title= 'Bienvenidos al curso de Angular Aubay';
-    this.logo  = '../../assets/Logo.svg';
+    this.title = 'Angular Aubay';
+    this.logo = '../../assets/logo.svg';
   }
 
 }

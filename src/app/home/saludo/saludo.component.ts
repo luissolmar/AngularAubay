@@ -6,19 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./saludo.component.css']
 })
 export class SaludoComponent implements OnInit {
-nombre: string;
-message: string;
+
+  nombre: string;
+  message: string;
 
   constructor() { }
 
-  //Inicializar
   ngOnInit() {
     this.nombre = ''
-    this.message = 'Dime tu nombre'
+    this.message= 'Dime tu nombre'
   }
-  //Funciones
-  onClickBorrar(ev: Event) {
+
+  onClickBorrar(ev: Event){
     this.nombre = ''
-    console.log(ev)
+    console.log(ev);
   }
+
 }
