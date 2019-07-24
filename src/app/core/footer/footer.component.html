@@ -2,7 +2,10 @@
     <div class="row">        
         <div class="col-12">
             <address> {{ autor }} - {{ empresa }} </address>
-            <p>{{ fecha.toLocaleDateString() }}</p>
+            <!-- <p>{{ fecha.toLocaleDateString() }}</p> -->
+            <p>{{ fecha | date : 'fullDate' | titlecase }}</p>
+            <!-- <p>{{ 10.00 | currency : 'EUR'}}</p> -->
+            <p>{{ 8010.041 | number : '0.0-3'}}</p>
         </div>        
     </div>
 </footer>
